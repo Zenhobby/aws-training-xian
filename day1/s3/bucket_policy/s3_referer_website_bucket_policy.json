@@ -1,0 +1,16 @@
+{
+  "Version":"2012-10-17",
+  "Id":"http referer policy example",
+  "Statement":[
+    {
+      "Sid":"Allow get requests originating from www.example.com and example.com.",
+      "Effect":"Allow",
+      "Principal":"*",
+      "Action":"s3:GetObject",
+      "Resource":"arn:aws:s3:::zhang.hongbin.trainee.aws-training-xian.com/*",
+      "Condition":{
+        "StringLike":{"aws:Referer":["http://www.aws-training-xian.com/*","http://aws-training-xian.com/*"]}
+      }
+    }
+  ]
+}
